@@ -1,5 +1,23 @@
-<h2>Pacientes</h2>
+<h2>Cadastro</h2>
 
-<ul class="patients">
-    <li *ngFor="let patient of patients">{{patient.firstName}} {{patient.lastName}}</li>
-</ul>
+<label for="firstName">Nome</label>
+<input type="text" [(ngModel)]="firstName" name="firstName" id="first-name"><br>
+
+<label for="lastName">Sobrenome</label>
+<input type="text" [(ngModel)]="lastName" name="lastName" id="lastName"><br>
+
+<label for="gender">Gênero</label>
+<input type="text" [(ngModel)]="gender" name="gender" id="gender"><br>
+
+<label for="birthdate">Data de Nascimento</label>
+<input type="text" [(ngModel)]="birthdate" name="birthdate"><br>
+
+<label for="email">Email</label>
+<input type="text" [(ngModel)]="email" name="email" id="email"><br>
+
+<label for="cellphone">Celular</label>
+<input type="text" [(ngModel)]="cellphone" name="cellphone"><br>
+
+<button type="button" 
+    (click)="addPatient(firstName, lastName, gender, birthdate, email, cellphone)">
+    Confirmar</button>
