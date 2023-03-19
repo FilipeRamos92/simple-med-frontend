@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { PatientsComponent } from './patients/patients.component';
+import { SpecialitiesComponent } from './specialities/specialities.component';
 
 @NgModule({
   declarations: [
-    PatientsComponent
+    PatientsComponent,
+    SpecialitiesComponent
   ],
   imports: [
     BrowserModule,
@@ -15,6 +17,6 @@ import { PatientsComponent } from './patients/patients.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [PatientsComponent]
+  bootstrap: [PatientsComponent, SpecialitiesComponent]
 })
 export class AppModule { }

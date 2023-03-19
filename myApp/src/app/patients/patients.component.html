@@ -1,4 +1,4 @@
-<h2>Cadastro</h2>
+<h2>Cadastrar Paciente</h2>
 
 <label for="firstName">Nome</label>
 <input type="text" [(ngModel)]="firstName" name="firstName" id="first-name"><br>
@@ -21,3 +21,9 @@
 <button type="button" 
     (click)="addPatient(firstName, lastName, gender, birthdate, email, cellphone)">
     Confirmar</button>
+
+<p></p>
+<h6>List de pacientes</h6>
+<ul>
+    <li *ngFor="let patient of patients">{{patient.firstName}} {{patient.lastName}}</li>
+</ul>

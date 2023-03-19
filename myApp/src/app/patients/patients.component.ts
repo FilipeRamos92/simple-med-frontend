@@ -38,7 +38,6 @@ export class PatientsComponent implements OnInit {
         gender: string,
         cellphone: string
     ): void {
-        console.log(firstName, lastName, email, birthdate, gender, cellphone);
         this.editPatient = undefined;
         firstName = firstName.trim();
         lastName = lastName.trim();
