@@ -13,7 +13,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class PatientService {
+export class PatientsService {
     patientUrl = 'http://localhost:8080/api/v1/patients';
 
     constructor(private http: HttpClient) {}

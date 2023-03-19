@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { Patient } from "./patient";
-import { PatientService } from "./patients.service";
+import { PatientsService } from "./patients.service";
 
 @Component({
     selector: 'app-patients',
     templateUrl: './patients.component.html',
-    providers: [PatientService]
+    providers: [PatientsService]
 })
 
 export class PatientsComponent implements OnInit {
@@ -19,7 +19,7 @@ export class PatientsComponent implements OnInit {
     gender= '';
     cellphone= '';
 
-    constructor(private patientService: PatientService) {}
+    constructor(private patientService: PatientsService) {}
 
     ngOnInit(): void {
         this.getPatients();
