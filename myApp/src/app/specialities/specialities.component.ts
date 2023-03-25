@@ -38,11 +38,9 @@ export class SpecialitiesComponent implements OnInit {
     }
 
     deleteSpeciality(speciality: Speciality): void {
-        this.specialities = this.specialities.filter(h => h !== speciality);
+        this.specialities = this.specialities.filter(s => s !== speciality);
         this.specialityService
           .deleteSpeciality(speciality.id)
           .subscribe();
-
-          console.log(this.specialities);
       }
 }

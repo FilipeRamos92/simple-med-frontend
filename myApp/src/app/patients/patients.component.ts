@@ -6,6 +6,7 @@ import { PatientsService } from "./patients.service";
 @Component({
     selector: 'app-patients',
     templateUrl: './patients.component.html',
+    styleUrls: ['./patients.component.css'],
     providers: [PatientsService]
 })
 
@@ -60,5 +61,36 @@ export class PatientsComponent implements OnInit {
         this.patientService
             .addPatient(newPatient)
             .subscribe((patient) => this.patients.push(patient));
+    }
+
+    deletePatient(patient: Patient): void {
+        this.patients = this.patients.filter(p => p !== patient);
+        this.patientService
+            .deletePatient(patient.id)
+            .subscribe();
+    }
+
+    edit(firstName: string, lastName: string) {
+        this.update(firstName, lastName);
+        this.editPatient = undefined;
+    }
+
+    update(firstName: string, lastName: string) {
+        if (firstName && this.editPatient && 
+            this.editPatient.firstName !== firstName &&
+            this.editPatient.lastName !== lastName) {
+            this.patientService
+                .updatePatient({...this.editPatient, 
+                    firstName: firstName, 
+                    lastName: lastName 
+                })
+                .subscribe(patient => {
+                    const ix = patient ? this.patients.findIndex(p => p.id === patient.id) : -1;
+                    if (ix > -1) {
+                        this.patients[ix] = patient;
+                    }
+                    this.editPatient = undefined;
+                })
+        }
     }
 }

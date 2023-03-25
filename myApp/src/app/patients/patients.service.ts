@@ -1,16 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
 import { Patient } from './patient';
-
-const httpOptions = {
-    headers: new HttpHeaders({
-        'Content-type': 'application/json',
-    })
-};
 
 @Injectable()
 export class PatientsService {
@@ -18,12 +11,21 @@ export class PatientsService {
 
     constructor(private http: HttpClient) {}
 
-    // Get patients from the server
     getPatients(): Observable<Patient[]> {
         return this.http.get<Patient[]>(this.patientUrl);
     }
 
     addPatient(patient: Patient): Observable<Patient> {
         return this.http.post<Patient>(this.patientUrl, patient);
+    }
+
+    deletePatient(id: number): Observable<unknown> {
+        const url = `${this.patientUrl}/${id}`;
+        return this.http.delete(url);
+    }
+
+    updatePatient(patient: Patient): Observable<Patient> {
+        const url = `${this.patientUrl}/${patient.id}`
+        return this.http.put<Patient>(url, patient);
     }
 }
