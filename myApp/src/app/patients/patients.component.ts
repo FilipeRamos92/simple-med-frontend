@@ -70,20 +70,15 @@ export class PatientsComponent implements OnInit {
             .subscribe();
     }
 
-    edit(firstName: string, lastName: string) {
-        this.update(firstName, lastName);
+    edit(firstName: string) {
+        this.update(firstName);
         this.editPatient = undefined;
     }
 
-    update(firstName: string, lastName: string) {
-        if (firstName && this.editPatient && 
-            this.editPatient.firstName !== firstName &&
-            this.editPatient.lastName !== lastName) {
+    update(firstName: string) {
+        if (firstName && this.editPatient && this.editPatient.firstName !== firstName) {
             this.patientService
-                .updatePatient({...this.editPatient, 
-                    firstName: firstName, 
-                    lastName: lastName 
-                })
+                .updatePatient({...this.editPatient, firstName: firstName})
                 .subscribe(patient => {
                     const ix = patient ? this.patients.findIndex(p => p.id === patient.id) : -1;
                     if (ix > -1) {
