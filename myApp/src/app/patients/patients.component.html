@@ -1,48 +1,39 @@
-<!-- <h2>Cadastrar Paciente</h2>
+<h2>Cadastro</h2>
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit(); patientForm.reset()">
 
-<label for="firstName">Nome</label>
-<input type="text" [(ngModel)]="firstName" name="firstName"><br>
+    <label for="first-name">Nome: </label>
+    <input id="first-name" type="text" formControlName="firstName"><br>
 
-<label for="lastName">Sobrenome</label>
-<input type="text" [(ngModel)]="lastName" name="lastName" id="lastName"><br>
+    <label for="last-name">Sobrenome: </label>
+    <input id="last-name" type="text" formControlName="lastName">
 
-<label for="gender">Gênero</label>
-<input type="text" [(ngModel)]="gender" name="gender" id="gender"><br>
+    <button type="submit"
+    [disabled]="!patientForm.valid">Confirmar</button>
+</form>
 
-<label for="birthdate">Data de Nascimento</label>
-<input type="text" [(ngModel)]="birthdate" name="birthdate"><br>
+<div class="saved-patient">
+    <h5>Pacientes Cadastrados</h5>
+    <ul>
+        <li *ngFor="let patient of patients">
+            <ng-template #editForm>
+                <form [formGroup]="patientForm" (ngSubmit)="updatePatient(patientForm); patientForm.reset()">
+                    <label for="first-name">Nome: </label>
+                    <input #editFirstName type="text" formControlName="firstName">
+                    <br>
 
-<label for="email">Email</label>
-<input type="text" [(ngModel)]="email" name="email" id="email"><br>
+                    <label for="last-name">Sobrenome: </label>
+                    <input #editFirstName type="text" formControlName="lastName">
 
-<label for="cellphone">Celular</label>
-<input type="text" [(ngModel)]="cellphone" name="cellphone"><br>
+                    <button type="submit">Confirmar</button>
+                </form>
+            </ng-template>
 
-<button type="button" 
-    (click)="addPatient(firstName, lastName, gender, birthdate, email, cellphone)">
-    Confirmar</button>
+            <p *ngIf="patient!==editPatient; else editForm">Nome: {{patient.firstName}}</p>
+            <p *ngIf="patient!==editPatient">Sobrenome: {{patient.lastName}}</p>
+            <button type="button" *ngIf="patient !== editPatient" (click)="editPatient = patient">Editar</button>
+            <button *ngIf="patient!==editPatient" type="button" (click)="deletePatient(patient)">Remover</button>
+        </li>
+    </ul>
+</div>
 
-<p></p>
-<h6>Lista de pacientes</h6>
-<ul>
-    <li *ngFor="let patient of patients">
-        <ng-template #editForm>
-            <label for="firstName">Nome: </label>
-            <input #patientEditInput type="text" class="firstName" 
-            [value]="editPatient!.firstName" 
-            (blur)="edit(patientEditInput.value)" 
-            (keydown.enter)="edit(patientEditInput.value)">
-        </ng-template>
-        
-        <p *ngIf="patient!==editPatient; else editForm">Nome: {{patient.firstName}}</p>
-        <p>Sobrenome: {{patient.lastName}}</p>
-        <p>Gênero: {{patient.gender}}</p>
-        <p>Data de Nascimento: {{patient.birthdate}}</p>
-        <p>Email: {{patient.email}}</p>
-        <p>Celular: {{patient.cellphone}}</p>
-        <button type="button" class="edit"
-            *ngIf="patient !== editPatient"
-            (click)="editPatient = patient">Editar</button>
-        <button type="button" (click)="deletePatient(patient)">Remover</button>
-    </li>
-</ul> -->
+<router-outlet></router-outlet>

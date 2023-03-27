@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
 import { PatientsComponent } from './patients/patients.component';
-import { RegisterPatientComponent } from './register-patient/register-patient.component';
+import { SpecialitiesComponent } from './specialities/specialities.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    RegisterPatientComponent
+    AppComponent,
+    PatientsComponent,
+    SpecialitiesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
-    // FormsModule
+    ReactiveFormsModule,
+    AppRoutingModule 
   ],
   providers: [],
-  bootstrap: [RegisterPatientComponent]
+  bootstrap: [AppComponent, PatientsComponent, SpecialitiesComponent]
 })
 export class AppModule { }

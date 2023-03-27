@@ -1,3 +1,19 @@
 ul {
     list-style-type: none;
 }
+
+.saved-patient > h6 {
+    margin-top: 40px;
+}
+
+.saved-patient > h5 {
+    margin-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.saved-patient > ul > li {
+    border: solid 1px;
+    margin: 10px;
+    padding: 20px;
+}
