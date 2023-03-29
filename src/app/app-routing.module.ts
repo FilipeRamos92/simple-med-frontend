@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { NewAppointmentComponent } from './components/pages/new-appointment/new-appointment.component';
 import { NewPatientComponent } from './components/pages/new-patient/new-patient.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'register', component: NewPatientComponent },
+    { path: 'appointment', component: NewAppointmentComponent },
 ]; // sets up routes constant where you define your routes
 
 // configures NgModule imports and exports

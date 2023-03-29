@@ -14,6 +14,7 @@ import { PatientFormComponent } from './components/patient-form/patient-form.com
 import { NewPatientComponent } from './components/pages/new-patient/new-patient.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewAppointmentComponent } from './components/pages/new-appointment/new-appointment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AboutComponent,
     PatientFormComponent,
     NewPatientComponent,
-    MessagesComponent
+    MessagesComponent,
+    NewAppointmentComponent
   ],
   imports: [
     BrowserModule,
