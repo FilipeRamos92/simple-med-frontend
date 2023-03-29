@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { Patient } from 'src/app/patient';
 
 @Component({
   selector: 'app-patient-form',
@@ -8,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class PatientFormComponent implements OnInit {
   @Input() btnText!: string;
+  @Output() onSubmit = new EventEmitter<Patient>();
 
   patientForm!: FormGroup;
 
@@ -15,24 +18,49 @@ export class PatientFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.patientForm = new FormGroup({
-      id: new FormControl(''),
       firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required])
+      lastName: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      birthdate: new FormControl('', [Validators.required]),
+      gender: new FormControl('', [Validators.required]),
+      cellphone: new FormControl('', [Validators.required])
     });
   }
 
-  get firstName() {
+  public get firstName() {
     return this.patientForm.get('firstName')!;
   }
 
-  get lastName() {
+  public get lastName() {
     return this.patientForm.get('lastName')!;
   }
 
+  
+  public get email() {
+    return this.patientForm.get('email')!;
+  }
+  
+  
+  public get birthdate() {
+    return this.patientForm.get('birthdate')!;
+  }
+
+  
+  public get gender() {
+    return this.patientForm.get('gender')!;
+  }
+
+  
+  public get cellphone() {
+    return this.patientForm.get('cellphone')!;
+  }
+  
+  
+  
   submit(): void {
     if (this.patientForm.invalid) {
       return;
     }
-    console.log("Formulário enviado!");
+    this.onSubmit.emit(this.patientForm.value);
   }
 }

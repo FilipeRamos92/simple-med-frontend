@@ -12,6 +12,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { PatientFormComponent } from './components/patient-form/patient-form.component';
 import { NewPatientComponent } from './components/pages/new-patient/new-patient.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,16 @@ import { NewPatientComponent } from './components/pages/new-patient/new-patient.
     HomeComponent,
     AboutComponent,
     PatientFormComponent,
-    NewPatientComponent
+    NewPatientComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule 
+    AppRoutingModule,
+    FontAwesomeModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
