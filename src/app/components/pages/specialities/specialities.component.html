@@ -1,0 +1,12 @@
+<div class="container">
+    <mat-form-field [formGroup]="formGroup">
+        <mat-label>Especialidade</mat-label>
+        <input formControlName="speciality" matInput type="text" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let item of filteredOptions" [value]="item">
+                {{item}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</div>
+<router-outlet></router-outlet>

@@ -7,6 +7,16 @@ const routes: Routes = [
     {
       path: 'medicos',
       loadChildren: () => import('./components/pages/doctors/doctors.module').then(m => m.DoctorsModule)
+    },
+    {
+      path: 'nova-consulta',
+      loadChildren: () => import('./components/pages/appointments/appointments.module')
+        .then(m => m.AppointmentsModule)
+    },
+    {
+      path: 'nova-consulta/especialidades',
+      loadChildren: () => import('./components/pages/specialities/specialities.module')
+        .then(m => m.SpecialitiesModule)
     }
 ]; // sets up routes constant where you define your routes
 
