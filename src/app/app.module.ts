@@ -5,21 +5,22 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './components/header/header.component'
 import { FooterComponent } from './components/footer/footer.component'
-import { HomeComponent } from './components/pages/home/home.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { DoctorsComponent } from './components/pages/doctors/doctors.component';
-import { SpecialitiesComponent } from './components/pages/specialities/specialities.component'
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+import { HomeComponent } from './components/pages/home/home.component'
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        FooterComponent,
         HomeComponent,
-        DoctorsComponent,
+        FooterComponent,
     ],
     imports: [
         BrowserModule,
@@ -27,6 +28,9 @@ import { SpecialitiesComponent } from './components/pages/specialities/specialit
         HttpClientModule,
         BrowserAnimationsModule,
         MatToolbarModule,
+        MatCardModule,
+        MatButtonModule,
+        MatGridListModule
     ],
     providers: [],
     bootstrap: [AppComponent],

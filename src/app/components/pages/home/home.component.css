@@ -1,0 +1,12 @@
+#action-button {
+    align-self: end;
+}
+
+.home-card {
+    max-width: 400px;
+}
+
+.container {
+    width: 50%;
+    margin-top: 60px;
+}
