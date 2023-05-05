@@ -1,1 +1,26 @@
-<p>Página Home</p>
+<div class="container">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Nova consulta</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions id="action-button">
+          <a routerLink="/nova-consulta/especialidades">
+            <button mat-raised-button>AGENDAR</button>
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Minhas consultas</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions id="action-button">
+            <button mat-raised-button>CONSULTAR</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
