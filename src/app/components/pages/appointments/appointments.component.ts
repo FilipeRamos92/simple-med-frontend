@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { AppointmentsService } from 'src/app/services/appointments.service';
 
 @Component({
   selector: 'app-appointments',

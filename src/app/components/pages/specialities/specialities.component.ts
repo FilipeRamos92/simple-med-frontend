@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { SpeciatiliesService } from 'src/app/services/speciatilies.service';
+import { SpeciatiliesService } from 'src/app/services/specialities/speciatilies.service';
 
 @Component({
   selector: 'app-specialities',

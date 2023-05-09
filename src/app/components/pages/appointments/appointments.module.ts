@@ -7,10 +7,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { SpecialitiesComponent } from '../specialities/specialities.component';
 
 @NgModule({
   declarations: [
-    AppointmentsComponent
+    AppointmentsComponent,
+    SpecialitiesComponent
   ],
   imports: [
     CommonModule,
