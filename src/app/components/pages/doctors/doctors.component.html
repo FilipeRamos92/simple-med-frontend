@@ -1,1 +1,5 @@
 <p>doctors works!</p>
+<app-specialities (specialityEvent)="addItem($event)"></app-specialities>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul>

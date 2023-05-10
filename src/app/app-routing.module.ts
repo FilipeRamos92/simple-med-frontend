@@ -4,10 +4,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', component: HomeComponent },
-    {
-      path: 'nova-consulta/especialidades',
-      loadChildren: () => import('./components/pages/appointments/appointments.module')
-        .then(m => m.AppointmentsModule)
+    { path: 'agendamento', loadChildren: () =>
+      import("./components/pages/specialities/specialities.module").then((m) => m.SpecialitiesModule)
     }
 ]; // sets up routes constant where you define your routes
 

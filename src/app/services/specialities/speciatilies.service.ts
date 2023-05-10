@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Speciality } from '../../interfaces/speciality';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpeciatiliesService {
+
+  private data = new BehaviorSubject('');
+  data$ = this.data.asObservable();
 
   baseUrl: string = environment.baseApiUrl;
   apiSpecialityUrl: string = `${this.baseUrl}api/v1/specialities`;
@@ -22,6 +25,10 @@ export class SpeciatiliesService {
 
   capitalize(word: string) {
     return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  changeData(data: string) {
+    this.data.next(data);
   }
 
 

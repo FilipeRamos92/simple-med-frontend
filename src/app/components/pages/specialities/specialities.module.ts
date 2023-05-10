@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SpecialitiesRoutingModule } from './specialities-routing.module';
-import { SpecialitiesComponent } from './specialities.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';

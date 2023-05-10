@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SpeciatiliesService } from 'src/app/services/specialities/speciatilies.service';
 
@@ -13,6 +13,9 @@ export class SpecialitiesComponent implements OnInit {
   formGroup! : FormGroup;
   
   filteredOptions!: string[];
+
+  @Output()
+  specialityEvent = new EventEmitter<string>();
   
   constructor(private service : SpeciatiliesService, private fb: FormBuilder) {}
 
@@ -41,5 +44,9 @@ export class SpecialitiesComponent implements OnInit {
       this.options = speciality;
       this.filteredOptions = speciality;
     })
+  }
+
+  selectSpeciality(value: string) {
+    this.service.changeData(value);
   }
 }

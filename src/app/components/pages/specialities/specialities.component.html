@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <mat-form-field [formGroup]="formGroup">
         <mat-label>Especialidade</mat-label>
         <input formControlName="speciality" matInput type="text" [matAutocomplete]="auto">
@@ -8,5 +8,7 @@
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
-</div>
-<router-outlet></router-outlet>
+</div> -->
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="selectSpeciality(newItem.value)">Add to parent's list</button>

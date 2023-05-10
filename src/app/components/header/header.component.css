@@ -1,0 +1,12 @@
+a {
+    color: antiquewhite;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.menu-container > ul {
+    list-style-type: none;
+    margin: 0;
+}
