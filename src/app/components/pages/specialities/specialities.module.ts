@@ -7,17 +7,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { SpecialitiesComponent } from './specialities.component';
+
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SpecialitiesComponent
+  ],
   imports: [
     CommonModule,
     SpecialitiesRoutingModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatFormFieldModule
   ]
 })
 export class SpecialitiesModule { }

@@ -1,3 +1,25 @@
 .container {
     margin: 100px;
+    display: flex;
+}
+
+.title-container {
+    margin: auto 0;
+}
+
+.title-container > span {
+    font-size: 22px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    padding-left: 60px;
+    border-left: solid 1px #c1c1c1;
+}
+
+.input-container > span {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
