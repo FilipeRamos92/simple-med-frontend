@@ -1,3 +1,13 @@
 <mat-toolbar color="primary">
-    <span>{{ title }}</span>
+    <a routerLink="/"><span>{{ title }}</span></a>
+    <div class="menu-container">
+        <ul>
+            <li>
+                <button mat-button [matMenuTriggerFor]="menu">Consultas</button>
+                <mat-menu #menu="matMenu">
+                <a routerLink="/agendamento/especialidades"><button mat-menu-item>Agendar</button></a>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
 </mat-toolbar>

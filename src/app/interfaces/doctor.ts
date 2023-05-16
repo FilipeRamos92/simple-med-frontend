@@ -1,7 +1,7 @@
 export interface Doctor {
-    firstName: string;
+    // firstName: string;
     lastName: string;
-    localService: string;
+    // localService: string;
     speciality: { id: number, name: string };
-    gender: string
+    // gender: string
 } 

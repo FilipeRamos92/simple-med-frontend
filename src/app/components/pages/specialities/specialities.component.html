@@ -1,12 +1,17 @@
 <div class="container">
-    <mat-form-field [formGroup]="formGroup">
-        <mat-label>Especialidade</mat-label>
-        <input formControlName="speciality" matInput type="text" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let item of filteredOptions" [value]="item">
-                {{item}}
-            </mat-option>
-        </mat-autocomplete>
-    </mat-form-field>
+    <div class="title-container">
+        <span>Especialidade</span>
+    </div>
+    <div class="input-container">
+        <span>Selecione uma especialidade médica</span>
+        <mat-form-field [formGroup]="formGroup">
+            <mat-label>Especialidade</mat-label>
+            <input formControlName="speciality" matInput type="text" [matAutocomplete]="auto" required>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option  (click)="goDoctorList()" *ngFor="let item of filteredOptions" [value]="item">
+                    {{item}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
 </div>
-<router-outlet></router-outlet>

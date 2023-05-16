@@ -9,9 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar'
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { HomeComponent } from './components/pages/home/home.component'
 
@@ -28,9 +29,10 @@ import { HomeComponent } from './components/pages/home/home.component'
         HttpClientModule,
         BrowserAnimationsModule,
         MatToolbarModule,
+        MatMenuModule,
         MatCardModule,
         MatButtonModule,
-        MatGridListModule
+        MatGridListModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

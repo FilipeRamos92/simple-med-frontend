@@ -3,13 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { DoctorsRoutingModule } from './doctors-routing.module';
 import { DoctorsComponent } from './doctors.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    DoctorsComponent
+  ],
   imports: [
     CommonModule,
-    DoctorsRoutingModule
+    DoctorsRoutingModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class DoctorsModule { }

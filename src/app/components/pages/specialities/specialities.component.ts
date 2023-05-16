@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { SpeciatiliesService } from 'src/app/services/speciatilies.service';
+import { Router } from '@angular/router';
+import { SpeciatiliesService } from 'src/app/services/specialities/speciatilies.service';
 
 @Component({
   selector: 'app-specialities',
@@ -8,23 +9,28 @@ import { SpeciatiliesService } from 'src/app/services/speciatilies.service';
   styleUrls: ['./specialities.component.css']
 })
 export class SpecialitiesComponent implements OnInit {
-  options = [""];
+
+  options: string[] = [""];
 
   formGroup! : FormGroup;
   
   filteredOptions!: string[];
-  
-  constructor(private service : SpeciatiliesService, private fb: FormBuilder) {}
 
-  ngOnInit() {
+  @Output()
+  specialityEvent = new EventEmitter<string>();
+  
+  constructor(
+    private service : SpeciatiliesService,
+    private fb: FormBuilder,
+    private router: Router) {}
+
+  ngOnInit(): void {
     this.initForm();
     this.findSpecialities();
   }
 
-  initForm() {
-    this.formGroup = this.fb.group({
-      'speciality': ['']
-    })
+  initForm(): void {
+    this.formGroup = this.fb.group({'speciality': ['']})
     this.formGroup.get('speciality')?.valueChanges.subscribe(response => {
       this.filterSpeciality(response);
     })
@@ -36,10 +42,18 @@ export class SpecialitiesComponent implements OnInit {
     })
   }
 
-  findSpecialities() {
+  findSpecialities(): void {
     this.service.getSpecialities().subscribe( speciality =>  { 
       this.options = speciality;
       this.filteredOptions = speciality;
     })
+  }
+
+  selectSpeciality(value: string): void {
+    this.service.changeData(value);
+  }
+
+  goDoctorList(): void {
+    this.router.navigate(['/agendamento/medicos', { especialidade: this.filteredOptions }]);
   }
 }
