@@ -8,7 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SpecialitiesComponent } from './specialities.component';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { SpecialitiesComponent } from './specialities.component';
     ReactiveFormsModule,
     MatInputModule,
     MatAutocompleteModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class SpecialitiesModule { }

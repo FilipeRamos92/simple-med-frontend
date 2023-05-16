@@ -1,5 +1,14 @@
-<p>doctors works!</p>
-<app-specialities (specialityEvent)="addItem($event)"></app-specialities>
-<ul>
-    <li *ngFor="let item of items">{{item}}</li>
-</ul>
+<div class="container">
+    <mat-card *ngFor="let item of doctorList">
+        <div class="identity">
+            <img id="doc-img" src="../../../../assets/icon-doctor-male.svg" alt="">
+            <mat-card-header>
+                <mat-card-title>{{ item.lastName }}</mat-card-title>
+                <mat-card-subtitle> {{ item.speciality.name }}</mat-card-subtitle>
+            </mat-card-header>
+        </div>
+        <mat-card-actions>
+            <button  mat-raised-button color="primary">Selecionar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

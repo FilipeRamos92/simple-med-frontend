@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Speciality } from '../../interfaces/speciality';
+import { UtilsService } from '../utils/utils.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,21 +16,15 @@ export class SpeciatiliesService {
   baseUrl: string = environment.baseApiUrl;
   apiSpecialityUrl: string = `${this.baseUrl}api/v1/specialities`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private utilsService: UtilsService) { }
 
   getSpecialities(): Observable<string[]> {
     return this.http.get<Speciality[]>(this.apiSpecialityUrl)
       .pipe(
-        map(response => response.map(speciality => this.capitalize(speciality.name))));
-  }
-
-  capitalize(word: string) {
-    return word.charAt(0).toUpperCase() + word.slice(1);
+        map(response => response.map(speciality => this.utilsService.capitalize(speciality.name))));
   }
 
   changeData(data: string) {
     this.data.next(data);
   }
-
-
 }

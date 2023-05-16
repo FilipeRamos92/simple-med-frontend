@@ -6,9 +6,9 @@
           <mat-card-title>Nova consulta</mat-card-title>
         </mat-card-header>
         <mat-card-actions id="action-button">
-          <a routerLink="/nova-consulta/especialidades">
-            <button mat-raised-button>AGENDAR</button>
-          </a>
+          <!-- <a routerLink="/agendamento/especialidades"> -->
+            <button mat-raised-button (click)="goToAppointment()">AGENDAR</button>
+          <!-- </a> -->
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>

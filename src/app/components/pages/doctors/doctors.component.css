@@ -1,0 +1,22 @@
+.container {
+    width: 60%;
+}
+
+.identity {
+    display: inline-flex;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.container > mat-card > mat-card-actions {
+    align-self: end;
+}
+
+.container > mat-card { 
+    margin: 20px;
+}
+
+#doc-img {
+    min-width: 50px;
+    max-width: 100px;
+}

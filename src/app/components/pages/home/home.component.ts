@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToAppointment(): void {
-    this.router.navigate(['/nova-consulta/especialidades']);
+    this.router.navigate(['/agendamento/especialidades']);
   }
 
 }

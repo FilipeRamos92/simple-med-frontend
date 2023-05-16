@@ -7,6 +7,10 @@ const routes: Routes = [
     { 
       path: 'agendamento/especialidades', loadChildren: () =>
       import("./components/pages/specialities/specialities.module").then((m) => m.SpecialitiesModule)
+    },
+    {
+      path: 'agendamento/medicos', loadChildren: () =>
+      import("./components/pages/doctors/doctors.module").then((m) => m.DoctorsModule)
     }
 ]; 
 
